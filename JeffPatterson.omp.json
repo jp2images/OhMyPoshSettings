@@ -20,7 +20,7 @@
           "template": "{{ .UserName }}"
         },
         {
-          "_comment":"First segment of the powerline. This shows the logged in User",
+          "_comment":"Second segment of the powerline. This shows the computer name",
           "type": "path",
           "style": "diamond",
           "_comment_trailing_diamond": "This one is not transparent",
@@ -37,7 +37,7 @@
           "foreground": "#ffffff",
           "background": "#5077ff",
           "_comment_template_path":"The path below provides a link to open in file explorer, \uEA83  is the floder icon",
-          "template": " \uea83{{ path .Path .Location }} ",
+          "template": " \uea83 {{ path .Path .Location }} ",
           "properties": {
             "folder_separator_icon": "\ue0b1",
             "home_icon": "~",
@@ -46,8 +46,7 @@
         },
         {
           "type": "git",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "style": "diamond",
           "foreground": "#193549",
           "background": "#fffb38",
           "background_templates": [
@@ -56,8 +55,8 @@
             "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
             "{{ if gt .Behind 0 }}#B388FF{{ end }}"
           ],
-          "leading_diamond": "\ue0b6",
-          "trailing_diamond": "\ue0b4",
+          "leading_diamond": "<transparent>\ue0b0</>",
+          "trailing_diamond": "\ue0b0",
           "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
           "properties": {
             "branch_max_length": 25,
